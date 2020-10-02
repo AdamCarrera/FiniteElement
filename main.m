@@ -47,7 +47,6 @@ else
     error('The engineering strain has exceeded 2%, adjust material values');
 end
 
-%% PLOT FEA SOLUTION n = odd
+%% Compute FEA Solution
 
-FEA(A, E, L, f, 9)
-
+FEA(A, E, L, f, 3)
