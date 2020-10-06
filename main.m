@@ -32,6 +32,7 @@ if overStrain(L, u(2,1))
     hold on
     plot(x(2,:),u(2,:))
     hold on
+    % Plot FEA solns as points
     plot(0,((9*f*L^2)/(8*A*E)),'d')
     hold on
     plot(L/2,((5*f*L^2)/(8*A*E)),'d')
@@ -41,7 +42,7 @@ if overStrain(L, u(2,1))
     title('Displacement as a Function of $x$ in Sectioned Rod', 'FontSize', 12);
     xlabel('Distance along the length of the Rod $x$');
     ylabel('Horizontal displacement $u(x)$');
-    legend('$u_L(x)$','$u_R(x)$','Interpreter', 'latex');
+    legend('$u_L(x)$','$u_R(x)$','$u_1$','$u_2$','$u_3$','Interpreter', 'latex');
     grid on
 else
     error('The engineering strain has exceeded 2%, adjust material values');
@@ -49,4 +50,4 @@ end
 
 %% Compute FEA Solution
 
-FEA(A, E, L, f, 3)
+u = FEA(A, E, L, f, 3)
